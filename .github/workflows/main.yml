@@ -42,10 +42,17 @@ jobs:
           echo 'CONFIG_TARGET_rockchip_armv8=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-ipsec-ikev2=m' >> .config
           make defconfig
+          
+      - name: Install Python ELF tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-pyelftools
+          python3 -c "import elftools; print('pyelftools OK')"
 
       - name: Build plugin package
         working-directory: immortalwrt
         run: |
+        
           make download -j"$(nproc)" || true
           make package/luci-app-ipsec-ikev2/compile V=s -j"$(nproc)"
 
