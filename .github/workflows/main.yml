@@ -1,88 +1,143 @@
-name: Build ImmortalWrt IKEv2 package
 
-on:
+name: Build ImmortalWrt IKEv2 APK
+
+"on":
   workflow_dispatch:
+  push:
+    paths:
+      - "luci-app-ipsec-ikev2/**"
+      - ".github/workflows/build.yml"
 
 permissions:
   contents: read
 
 jobs:
   build:
-    runs-on: ubuntu-24.04
-    steps:
-      - name: Install build tools
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential clang flex bison g++ gawk \
-            gcc-multilib g++-multilib gettext git libncurses-dev libssl-dev \
-            python3-setuptools rsync swig unzip zlib1g-dev file wget curl \
-            zstd
+    runs-on: ubuntu-22.04
+    timeout-minutes: 360
 
-      - name: Checkout ImmortalWrt 25.12 source
+    steps:
+      # 1. 获取你自己的仓库，其中应包含 luci-app-ipsec-ikev2 目录
+      - name: Checkout plugin repository
+        uses: actions/checkout@v4
+
+      # 2. 获取 ImmortalWrt 25.12 系列源码
+      - name: Checkout ImmortalWrt
         uses: actions/checkout@v4
         with:
           repository: immortalwrt/immortalwrt
           ref: openwrt-25.12
           path: immortalwrt
+          fetch-depth: 1
 
-      - name: Checkout IKEv2 LuCI app
-        uses: actions/checkout@v4
-        with:
-          repository: ksong008/luci-app-ipsec-ikev2
-          path: luci-app-ipsec-ikev2
+      # 3. 安装构建环境依赖
+      - name: Install build prerequisites
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential \
+            clang \
+            flex \
+            bison \
+            g++ \
+            gawk \
+            gcc-multilib \
+            g++-multilib \
+            gettext \
+            git \
+            libncurses-dev \
+            libssl-dev \
+            python3 \
+            python3-dev \
+            python3-setuptools \
+            python3-pyelftools \
+            python3-distutils \
+            rsync \
+            swig \
+            unzip \
+            zlib1g-dev \
+            file \
+            wget \
+            curl \
+            jq \
+            zstd
+          python3 -c "import elftools; print('pyelftools OK')"
 
-      - name: Configure feeds and package
+      # 4. 检查插件源码
+      - name: Verify plugin source
+        run: |
+          test -f luci-app-ipsec-ikev2/Makefile || {
+            echo "ERROR: 仓库根目录下没有找到 luci-app-ipsec-ikev2/Makefile"
+            exit 1
+          }
+          echo "Plugin source found."
+
+      # 5. 更新并安装 ImmortalWrt feeds
+      - name: Update feeds
         working-directory: immortalwrt
         run: |
           ./scripts/feeds update -a
           ./scripts/feeds install -a
-          mkdir -p package/custom
-          cp -a ../luci-app-ipsec-ikev2 package/custom/
+
+      # 6. 将插件加入自定义软件包目录
+      - name: Copy plugin source
+        run: |
+          mkdir -p immortalwrt/package/custom
+          cp -a luci-app-ipsec-ikev2 \
+            immortalwrt/package/custom/luci-app-ipsec-ikev2
+
+      # 7. 配置目标平台
+      - name: Configure target
+        working-directory: immortalwrt
+        run: |
           echo 'CONFIG_TARGET_rockchip=y' >> .config
           echo 'CONFIG_TARGET_rockchip_armv8=y' >> .config
           echo 'CONFIG_PACKAGE_luci-app-ipsec-ikev2=m' >> .config
           make defconfig
-          
-      - name: Install Python ELF tools
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y python3-pyelftools
-          python3 -c "import elftools; print('pyelftools OK')"
 
-      - name: Build plugin package
+          echo "===== Target configuration ====="
+          grep -E '^CONFIG_TARGET_rockchip|^CONFIG_PACKAGE_luci-app-ipsec-ikev2=' .config || true
+
+          grep -q '^CONFIG_TARGET_rockchip=y' .config
+          grep -q '^CONFIG_TARGET_rockchip_armv8=y' .config
+
+      # 8. 下载构建所需源码
+      - name: Download sources
         working-directory: immortalwrt
         run: |
-        
-          make download -j"$(nproc)" || true
-          make package/luci-app-ipsec-ikev2/compile V=s -j"$(nproc)"
+          make download -j"$(nproc)"
 
-      - name: Collect generated APKs and build diagnostics
+      # 9. 编译插件
+      - name: Build IKEv2 plugin
+        working-directory: immortalwrt
+        run: |
+          make package/custom/luci-app-ipsec-ikev2/compile \
+            V=s -j"$(nproc)"
+
+      # 10. 收集 APK 和诊断信息
+      - name: Collect build artifacts
         if: always()
         run: |
           mkdir -p artifact/packages
-          find immortalwrt/bin/packages immortalwrt/bin/targets \
-            -type f -name '*.apk' -exec cp -n {} artifact/packages/ \; 2>/dev/null || true
-          find artifact/packages -maxdepth 1 -type f -name '*.apk' -printf '%f\n' \
-            | sort > artifact/APK-FILES.txt
-          {
-            echo "Build target: rockchip/armv8"
-            echo "Source branch: ImmortalWrt openwrt-25.12"
-            echo
-            echo "This artifact collects APKs generated by this build only."
-            echo "It is NOT guaranteed to contain every runtime dependency."
-            echo "Check the build log and the router's configured 25.12.2 repositories"
-            echo "before installing. Do not force-install kernel modules from a mismatched kernel ABI."
-          } > artifact/README.txt
-          tar -czf immortalwrt-ikev2-apks.tar.gz artifact
 
+          find immortalwrt/bin/packages immortalwrt/bin/targets \
+            -type f -name '*.apk' \
+            -exec cp -n {} artifact/packages/ \; 2>/dev/null || true
+
+          find artifact/packages -maxdepth 1 -type f -name '*.apk' \
+            -printf '%f\n' | sort > artifact/APK-FILES.txt
+
+          cp immortalwrt/.config artifact/immortalwrt.config 2>/dev/null || true
+
+          echo "===== Generated APK files ====="
+          cat artifact/APK-FILES.txt
+
+      # 11. 上传构建产物，即使编译失败也上传诊断结果
       - name: Upload build artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: immortalwrt-25.12-rockchip-armv8-ikev2
-          path: |
-            immortalwrt-ikev2-apks.tar.gz
-            artifact/APK-FILES.txt
-            artifact/README.txt
+          name: immortalwrt-ikev2-rockchip-armv8
+          path: artifact/
           if-no-files-found: warn
-          retention-days: 14
+          retention-days: 7
