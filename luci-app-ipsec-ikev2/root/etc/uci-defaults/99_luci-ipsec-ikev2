@@ -1,0 +1,308 @@
+#!/bin/sh
+
+changed=0
+network_changed=0
+default_uplink=
+default_dns=
+
+[ -f /etc/config/ipsec ] || {
+	touch /etc/config/ipsec
+	changed=1
+}
+
+if [ -r /lib/functions/network.sh ]; then
+	. /lib/functions/network.sh
+fi
+
+sections_by_type() {
+	local config="$1"
+	local type="$2"
+	uci -q show "$config" | sed -n "s/^\($config\.[^=]*\)=$type$/\1/p"
+}
+
+first_section_by_type() {
+	sections_by_type ipsec "$1" | head -n 1
+}
+
+valid_uplink() {
+	local candidate="$1"
+
+	case "$candidate" in
+	''|loopback|vpn|vpn_vip|*[!A-Za-z0-9_]*) return 1 ;;
+	esac
+
+	[ "$(uci -q get "network.$candidate" 2>/dev/null)" = interface ] && \
+		[ "$(uci -q get "network.$candidate.disabled" 2>/dev/null)" != 1 ]
+}
+
+valid_ifid() {
+	local value="$1"
+
+	case "$value" in
+	''|*[!0-9]*) return 1 ;;
+	esac
+
+	[ "$value" -ge 1 ] 2>/dev/null && [ "$value" -le 4294967295 ] 2>/dev/null
+}
+
+certificate_preferred_identity() {
+	local file="$1"
+	[ -s "$file" ] || return 0
+	command -v openssl >/dev/null 2>&1 || return 0
+
+	{
+		openssl x509 -in "$file" -noout -ext subjectAltName 2>/dev/null | \
+			sed -n '/Subject Alternative Name/,$p' | sed '1d' | tr ',' '\n' | \
+			sed -n \
+				-e 's/^[[:space:]]*DNS:[[:space:]]*//p' \
+				-e 's/^[[:space:]]*IP Address:[[:space:]]*//p'
+		openssl x509 -in "$file" -noout -subject -nameopt RFC2253 2>/dev/null | \
+			sed -n -e 's/^subject=//' -e 's/.*CN=\([^,]*\).*/\1/p'
+	} | awk 'length($0) <= 253 && $0 ~ /^[A-Za-z0-9.:-]+$/ && !seen[$0]++ { print; exit }'
+}
+
+set_missing_local_identifier() {
+	local section="$1"
+	local cert identity
+
+	[ -z "$(uci -q get "ipsec.$section.local_identifier" 2>/dev/null)" ] || return 0
+	cert="$(uci -q get "ipsec.$section.local_cert" 2>/dev/null)"
+	case "$cert" in
+	''|*[!A-Za-z0-9._-]*) return 0 ;;
+	esac
+	identity="$(certificate_preferred_identity "/etc/swanctl/x509/$cert")"
+	[ -n "$identity" ] || return 0
+	uci set "ipsec.$section.local_identifier=$identity"
+	changed=1
+}
+
+first_configured_uplink() {
+	local global_section="$1"
+	local candidate
+
+	for candidate in $(uci -q get "$global_section.interface" 2>/dev/null); do
+		if valid_uplink "$candidate"; then
+			printf '%s\n' "$candidate"
+			return 0
+		fi
+	done
+
+	return 1
+}
+
+infer_uplink() {
+	local found path candidate count only
+	found=
+
+	if command -v network_find_wan >/dev/null 2>&1; then
+		network_find_wan found 1 >/dev/null 2>&1 || found=
+		if valid_uplink "$found"; then
+			printf '%s\n' "$found"
+			return 0
+		fi
+	fi
+
+	for path in $(sections_by_type network interface); do
+		candidate="${path#network.}"
+		valid_uplink "$candidate" || continue
+		if [ -n "$(uci -q get "network.$candidate.gateway" 2>/dev/null)" ]; then
+			printf '%s\n' "$candidate"
+			return 0
+		fi
+	done
+
+	for path in $(sections_by_type network interface); do
+		candidate="${path#network.}"
+		valid_uplink "$candidate" || continue
+		case "$(uci -q get "network.$candidate.proto" 2>/dev/null)" in
+		dhcp|dhcpv6|ppp|pppoe|3g|ncm|qmi|mbim|wwan|modemmanager)
+			printf '%s\n' "$candidate"
+			return 0
+			;;
+		esac
+	done
+
+	count=0
+	only=
+	for path in $(sections_by_type network interface); do
+		candidate="${path#network.}"
+		valid_uplink "$candidate" || continue
+		count=$((count + 1))
+		only="$candidate"
+	done
+
+	if [ "$count" -eq 1 ]; then
+		printf '%s\n' "$only"
+		return 0
+	fi
+
+	return 1
+}
+
+ensure_section() {
+	local section="$1"
+	local type="$2"
+
+	if ! uci -q get "ipsec.$section" >/dev/null; then
+		uci set "ipsec.$section=$type"
+		changed=1
+	fi
+}
+
+set_default() {
+	local option="$1"
+	local value="$2"
+	[ -n "$value" ] || return
+
+	if ! uci -q get "$option" >/dev/null; then
+		uci set "$option=$value"
+		changed=1
+	fi
+}
+
+add_list_once() {
+	local option="$1"
+	local value="$2"
+	local current="$(uci -q get "$option" 2>/dev/null)"
+	[ -n "$value" ] || return
+
+	case " $current " in
+	*" $value "*)
+		;;
+	*)
+		uci add_list "$option=$value"
+		changed=1
+		;;
+	esac
+}
+
+global="$(first_section_by_type ipsec)"
+if [ -z "$global" ]; then
+	global="ipsec.$(uci add ipsec ipsec)"
+	changed=1
+fi
+
+default_uplink="$(first_configured_uplink "$global")" || default_uplink=
+if [ -z "$default_uplink" ]; then
+	default_uplink="$(infer_uplink)" || default_uplink=
+	[ -n "$default_uplink" ] && add_list_once "$global.interface" "$default_uplink"
+fi
+
+if [ -n "$default_uplink" ] && [ "$(uci -q get network.vpn 2>/dev/null)" = interface ] && \
+	[ "$(uci -q get network.vpn.tunlink 2>/dev/null)" != "$default_uplink" ]; then
+	uci set "network.vpn.tunlink=$default_uplink"
+	network_changed=1
+fi
+
+if [ -n "$default_uplink" ]; then
+	default_dns="$(uci -q get "network.$default_uplink.dns" 2>/dev/null | awk '{ print $1; exit }')"
+	if [ -z "$default_dns" ] && command -v network_get_dnsserver >/dev/null 2>&1; then
+		runtime_dns=
+		network_get_dnsserver runtime_dns "$default_uplink" 1 >/dev/null 2>&1 || runtime_dns=
+		default_dns="$(printf '%s\n' "$runtime_dns" | awk '{ print $1; exit }')"
+	fi
+	[ -n "$default_dns" ] || default_dns="$(uci -q get "network.$default_uplink.ipaddr" 2>/dev/null | sed 's,/.*,,')"
+fi
+
+set_default "$global.zone" "vpn"
+set_default "$global.debug" "1"
+
+vpn_zone="$(uci -q get "$global.zone" 2>/dev/null)"
+case "$vpn_zone" in
+''|*[!A-Za-z0-9_]*)
+	;;
+*)
+	if [ "$(uci -q get network.vpn 2>/dev/null)" = interface ] && \
+		[ "$(uci -q get network.vpn.zone 2>/dev/null)" != "$vpn_zone" ]; then
+		uci set "network.vpn.zone=$vpn_zone"
+		network_changed=1
+	fi
+	;;
+esac
+
+ensure_section rw_pubkey remote
+set_default ipsec.rw_pubkey.enabled 0
+set_default ipsec.rw_pubkey.gateway any
+set_default ipsec.rw_pubkey.authentication_method pubkey
+set_default ipsec.rw_pubkey.local_cert serverCert.pem
+set_default ipsec.rw_pubkey.local_key serverKey.pem
+set_default ipsec.rw_pubkey.rekeytime 4h
+set_default ipsec.rw_pubkey.keyingtries 0
+set_default ipsec.rw_pubkey.mobike 1
+set_default ipsec.rw_pubkey.send_cert always
+set_default ipsec.rw_pubkey.send_certreq yes
+set_default ipsec.rw_pubkey.fragmentation 1
+add_list_once ipsec.rw_pubkey.remote_ca_certs caCert.pem
+add_list_once ipsec.rw_pubkey.crypto_proposal ike_proposal
+add_list_once ipsec.rw_pubkey.tunnel rw_child
+add_list_once ipsec.rw_pubkey.pools primaryipv4
+
+ensure_section rw_eap remote
+set_default ipsec.rw_eap.enabled 0
+set_default ipsec.rw_eap.gateway any
+set_default ipsec.rw_eap.authentication_method eap-mschapv2
+set_default ipsec.rw_eap.local_cert serverCert.pem
+set_default ipsec.rw_eap.local_key serverKey.pem
+set_default ipsec.rw_eap.eap_id %any
+set_default ipsec.rw_eap.rekeytime 4h
+set_default ipsec.rw_eap.keyingtries 0
+set_default ipsec.rw_eap.mobike 1
+set_default ipsec.rw_eap.send_cert always
+set_default ipsec.rw_eap.send_certreq no
+set_default ipsec.rw_eap.fragmentation 1
+add_list_once ipsec.rw_eap.crypto_proposal ike_proposal
+add_list_once ipsec.rw_eap.tunnel rw_child
+add_list_once ipsec.rw_eap.pools primaryipv4
+
+set_missing_local_identifier rw_pubkey
+set_missing_local_identifier rw_eap
+
+ensure_section ike_proposal crypto_proposal
+set_default ipsec.ike_proposal.encryption_algorithm aes256gcm
+set_default ipsec.ike_proposal.dh_group modp2048
+set_default ipsec.ike_proposal.prf_algorithm prfsha256
+
+ensure_section rw_child tunnel
+add_list_once ipsec.rw_child.local_subnet 0.0.0.0/0
+set_default ipsec.rw_child.if_id 357
+set_default ipsec.rw_child.rekeytime 1h
+set_default ipsec.rw_child.startaction none
+set_default ipsec.rw_child.closeaction none
+add_list_once ipsec.rw_child.crypto_proposal esp_proposal
+
+network_ifid="$(uci -q get network.vpn.ifid 2>/dev/null)"
+if valid_ifid "$network_ifid" && [ "$(uci -q get ipsec.rw_child.if_id 2>/dev/null)" != "$network_ifid" ]; then
+	uci set "ipsec.rw_child.if_id=$network_ifid"
+	changed=1
+fi
+
+ensure_section esp_proposal crypto_proposal
+set_default ipsec.esp_proposal.encryption_algorithm aes256gcm
+set_default ipsec.esp_proposal.dh_group modp2048
+
+ensure_section esp_proposal_legacy crypto_proposal
+set_default ipsec.esp_proposal_legacy.enabled 0
+set_default ipsec.esp_proposal_legacy.encryption_algorithm aes256
+set_default ipsec.esp_proposal_legacy.hash_algorithm sha256
+set_default ipsec.esp_proposal_legacy.dh_group modp2048
+
+ensure_section primaryipv4 pools
+set_default ipsec.primaryipv4.addrs 10.0.2.2-10.0.2.64
+add_list_once ipsec.primaryipv4.dns "$default_dns"
+
+[ "$changed" -eq 0 ] || uci commit ipsec
+[ "$network_changed" -eq 0 ] || uci commit network
+
+if [ "$(uci -q get ipsec.rw_pubkey.enabled 2>/dev/null)" != 1 ] && \
+	[ "$(uci -q get ipsec.rw_eap.enabled 2>/dev/null)" != 1 ] && \
+	[ -x /etc/init.d/swanctl ]; then
+	/etc/init.d/swanctl disable >/dev/null 2>&1
+	/etc/init.d/swanctl stop >/dev/null 2>&1
+fi
+
+if [ -x /etc/init.d/ipsec-ikev2-permissions ]; then
+	/etc/init.d/ipsec-ikev2-permissions enable >/dev/null 2>&1
+	/etc/init.d/ipsec-ikev2-permissions start
+fi
+
+exit 0

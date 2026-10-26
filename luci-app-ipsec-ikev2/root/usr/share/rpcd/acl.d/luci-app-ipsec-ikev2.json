@@ -1,0 +1,46 @@
+{
+  "luci-app-ipsec-ikev2": {
+    "description": "Grant access to LuCI IPsec IKEv2 configuration",
+    "read": {
+      "uci": [
+        "ipsec",
+        "network",
+        "firewall"
+      ],
+      "ubus": {
+        "luci.ipsec_ikev2": [
+          "status",
+          "get_logs",
+          "validate_config",
+          "list_certs",
+          "list_eap_users"
+        ],
+        "service": [
+          "list"
+        ]
+      }
+    },
+    "write": {
+      "uci": [
+        "ipsec",
+        "network",
+        "firewall"
+      ],
+      "ubus": {
+        "luci.ipsec_ikev2": [
+          "service_action",
+          "sync_firewall",
+          "generate_ca",
+          "generate_server_cert",
+          "generate_client_cert",
+          "export_client_p12",
+          "set_eap_user",
+          "delete_eap_user"
+        ],
+        "service": [
+          "set"
+        ]
+      }
+    }
+  }
+}

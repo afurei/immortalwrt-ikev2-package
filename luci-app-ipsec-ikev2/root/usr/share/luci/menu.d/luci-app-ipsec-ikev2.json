@@ -1,0 +1,69 @@
+{
+  "admin/vpn": {
+    "title": "VPN",
+    "order": 50,
+    "action": {
+      "type": "firstchild"
+    }
+  },
+  "admin/vpn/ipsec-ikev2": {
+    "title": "IPsec IKEv2",
+    "order": 20,
+    "action": {
+      "type": "firstchild"
+    },
+    "depends": {
+      "acl": [
+        "luci-app-ipsec-ikev2"
+      ]
+    }
+  },
+  "admin/vpn/ipsec-ikev2/overview": {
+    "title": "Overview",
+    "order": 10,
+    "action": {
+      "type": "view",
+      "path": "ipsec-ikev2/overview"
+    }
+  },
+  "admin/vpn/ipsec-ikev2/server": {
+    "title": "Server",
+    "order": 20,
+    "action": {
+      "type": "view",
+      "path": "ipsec-ikev2/server"
+    }
+  },
+  "admin/vpn/ipsec-ikev2/users": {
+    "title": "Users",
+    "order": 30,
+    "action": {
+      "type": "view",
+      "path": "ipsec-ikev2/users"
+    }
+  },
+  "admin/vpn/ipsec-ikev2/crypto": {
+    "title": "Crypto",
+    "order": 40,
+    "action": {
+      "type": "view",
+      "path": "ipsec-ikev2/crypto"
+    }
+  },
+  "admin/vpn/ipsec-ikev2/certificates": {
+    "title": "Certificates",
+    "order": 50,
+    "action": {
+      "type": "view",
+      "path": "ipsec-ikev2/certificates"
+    }
+  },
+  "admin/vpn/ipsec-ikev2/advanced": {
+    "title": "Advanced",
+    "order": 60,
+    "action": {
+      "type": "view",
+      "path": "ipsec-ikev2/advanced"
+    }
+  }
+}

@@ -1,0 +1,1187 @@
+# Generated for luci-app-ipsec-ikev2.
+msgid ""
+msgstr ""
+"Project-Id-Version: luci-app-ipsec-ikev2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-08 00:00+0000\n"
+"PO-Revision-Date: 2026-07-08 00:00+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: Chinese Simplified\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "/etc/swanctl/x509ca/caCert.pem and /etc/swanctl/private/caKey.pem"
+msgstr ""
+
+msgid "Address pools"
+msgstr ""
+
+msgid "Advanced"
+msgstr ""
+
+msgid "Advanced and Firewall"
+msgstr ""
+
+msgid "Allow VPN clients to access WAN"
+msgstr ""
+
+msgid "Allow clients to roam between networks without reconnecting."
+msgstr ""
+
+msgid "Allowed characters: letters, numbers, dot, underscore, dash."
+msgstr ""
+
+msgid "Also create optional AH rule"
+msgstr ""
+
+msgid "Always"
+msgstr ""
+
+msgid "Apply firewall"
+msgstr ""
+
+msgid "Apply network"
+msgstr ""
+
+msgid "Authentication"
+msgstr ""
+
+msgid "Basic"
+msgstr ""
+
+msgid "CA Certificate"
+msgstr ""
+
+msgid "CA certificate"
+msgstr ""
+
+msgid "CA certificates"
+msgstr ""
+
+msgid "CA generation finished."
+msgstr ""
+
+msgid "CHILD rekey time"
+msgstr ""
+
+msgid "Certificate"
+msgstr ""
+
+msgid "Certificates"
+msgstr ""
+
+msgid "Check"
+msgstr ""
+
+msgid "Child Tunnel"
+msgstr ""
+
+msgid "Child Tunnel Crypto Binding"
+msgstr ""
+
+msgid "Child tunnels"
+msgstr ""
+
+msgid "Client Address Pool"
+msgstr ""
+
+msgid "Client Certificate"
+msgstr ""
+
+msgid "Client Certificates"
+msgstr ""
+
+msgid "Client certificate generation finished."
+msgstr ""
+
+msgid "Client name"
+msgstr ""
+
+msgid "Client p12 export finished."
+msgstr ""
+
+msgid "Client pool"
+msgstr ""
+
+msgid "Close action"
+msgstr ""
+
+msgid "Common name"
+msgstr ""
+
+msgid "Configuration"
+msgstr ""
+
+msgid "Configuration Validation"
+msgstr ""
+
+msgid "Configuration checks are read-only."
+msgstr ""
+
+msgid "Configure the IKEv2 responder, identity, XFRM interface, and client address pool."
+msgstr ""
+
+msgid "Create ESP proposal"
+msgstr ""
+
+msgid "Create IKE proposal"
+msgstr ""
+
+msgid "Create VPN gateway address"
+msgstr ""
+
+msgid "Create XFRM interface"
+msgstr ""
+
+msgid "Create address pool"
+msgstr ""
+
+msgid "Create and inspect CA, server, and client certificate material used by strongSwan. Private keys are never displayed in the browser."
+msgstr ""
+
+msgid "Create child tunnel"
+msgstr ""
+
+msgid "Create legacy ESP proposal"
+msgstr ""
+
+msgid "Create road-warrior remote"
+msgstr ""
+
+msgid "Crypto"
+msgstr ""
+
+msgid "Crypto Proposals"
+msgstr ""
+
+msgid "DH"
+msgstr ""
+
+msgid "DH group"
+msgstr ""
+
+msgid "DNS servers"
+msgstr ""
+
+msgid "Debug level"
+msgstr ""
+
+msgid "Device"
+msgstr ""
+
+msgid "Diagnostics"
+msgstr ""
+
+msgid "ESP Proposal"
+msgstr ""
+
+msgid "ESP proposals"
+msgstr ""
+
+msgid "Enable responder"
+msgstr ""
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Encryption"
+msgstr ""
+
+msgid "Expires"
+msgstr ""
+
+msgid "Export .p12"
+msgstr ""
+
+msgid "Export password"
+msgstr ""
+
+msgid "Exported .p12 bundles are written to /tmp/luci-ipsec-ikev2 with mode 0600. The password is not stored in UCI."
+msgstr ""
+
+msgid "Fingerprint"
+msgstr ""
+
+msgid "Firewall Sync"
+msgstr ""
+
+msgid "Firewall preview failed."
+msgstr ""
+
+msgid "Firewall preview loaded."
+msgstr ""
+
+msgid "Firewall rules synchronized."
+msgstr ""
+
+msgid "Firewall sync failed."
+msgstr ""
+
+msgid "Firewall zone"
+msgstr ""
+
+msgid "Gateway"
+msgstr ""
+
+msgid "Generate CA"
+msgstr ""
+
+msgid "Generate client cert/key and export a password-protected .p12 bundle."
+msgstr ""
+
+msgid "Generate client certificate"
+msgstr ""
+
+msgid "Generate server certificate"
+msgstr ""
+
+msgid "Global IPsec Settings"
+msgstr ""
+
+msgid "Global strongSwan UCI settings. The installation defaults keep the service disabled until the remote section is explicitly enabled."
+msgstr ""
+
+msgid "Hash"
+msgstr ""
+
+msgid "IKE / CHILD"
+msgstr ""
+
+msgid "IKE / CHILD SA"
+msgstr ""
+
+msgid "IKE Proposal"
+msgstr ""
+
+msgid "IKE fragmentation"
+msgstr ""
+
+msgid "IKE proposals"
+msgstr ""
+
+msgid "IKE rekey time"
+msgstr ""
+
+msgid "IPsec IKEv2"
+msgstr ""
+
+msgid "IPsec IKEv2 Road-Warrior"
+msgstr ""
+
+msgid "Identifier"
+msgstr ""
+
+msgid "If requested"
+msgstr ""
+
+msgid "Integrity / PRF"
+msgstr ""
+
+msgid "Item"
+msgstr ""
+
+msgid "Keying tries"
+msgstr ""
+
+msgid "Known client identities from /etc/swanctl/x509 and /etc/swanctl/private."
+msgstr ""
+
+msgid "Last exported p12"
+msgstr ""
+
+msgid "Legacy ESP Proposal"
+msgstr ""
+
+msgid "Lifetime days"
+msgstr ""
+
+msgid "Local identifier"
+msgstr ""
+
+msgid "Local subnets"
+msgstr ""
+
+msgid "MOBIKE"
+msgstr ""
+
+msgid "MTU"
+msgstr ""
+
+msgid "Message"
+msgstr ""
+
+msgid "Missing"
+msgstr ""
+
+msgid "Modern IPsec defaults have been staged. Use Save & Apply to commit and apply the changes."
+msgstr ""
+
+msgid "Modern defaults"
+msgstr ""
+
+msgid "Monitor strongSwan swanctl, active tunnels, package readiness, and recent IPsec log output."
+msgstr ""
+
+msgid "Must match the IKEv2 local identifier."
+msgstr ""
+
+msgid "Must match the server certificate SAN or CN."
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Network Sync"
+msgstr ""
+
+msgid "Network preview failed."
+msgstr ""
+
+msgid "Network preview loaded."
+msgstr ""
+
+msgid "Network sections synchronized."
+msgstr ""
+
+msgid "Network sync failed."
+msgstr ""
+
+msgid "Never"
+msgstr ""
+
+msgid "No client certificates found."
+msgstr ""
+
+msgid "No data loaded yet."
+msgstr ""
+
+msgid "No matching log entries."
+msgstr ""
+
+msgid "No validation data loaded yet."
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "None / AEAD"
+msgstr ""
+
+msgid "Optional compatibility profile. It is not referenced by the child tunnel unless explicitly added above."
+msgstr ""
+
+msgid "Options"
+msgstr ""
+
+msgid "Overview"
+msgstr ""
+
+msgid "PRF"
+msgstr ""
+
+msgid "Present"
+msgstr ""
+
+msgid "Preview firewall"
+msgstr ""
+
+msgid "Preview network"
+msgstr ""
+
+msgid "Private key"
+msgstr ""
+
+msgid "Proposal Preview"
+msgstr ""
+
+msgid "Protocol"
+msgstr ""
+
+msgid "Public key"
+msgstr ""
+
+msgid "Quiet"
+msgstr ""
+
+msgid "Ready"
+msgstr ""
+
+msgid "Recent Log"
+msgstr ""
+
+msgid "Recommended XFRM interface and VPN gateway address."
+msgstr ""
+
+msgid "Refresh"
+msgstr ""
+
+msgid "Reload"
+msgstr ""
+
+msgid "Required packages"
+msgstr ""
+
+msgid "Restart"
+msgstr ""
+
+msgid "Review and synchronize recommended network and firewall sections. Existing custom sections are not overwritten."
+msgstr ""
+
+msgid "Road-Warrior Remote"
+msgstr ""
+
+msgid "Rules are matched by zone and rule name, never blindly overwritten."
+msgstr ""
+
+msgid "Running"
+msgstr ""
+
+msgid "Runtime Checks"
+msgstr ""
+
+msgid "Section"
+msgstr ""
+
+msgid "Send certificate"
+msgstr ""
+
+msgid "Send certificate request"
+msgstr ""
+
+msgid "Server"
+msgstr ""
+
+msgid "Server Certificate"
+msgstr ""
+
+msgid "Server Settings"
+msgstr ""
+
+msgid "Server certificate"
+msgstr ""
+
+msgid "Server certificate generation finished."
+msgstr ""
+
+msgid "Server private key"
+msgstr ""
+
+msgid "Service action completed: %s"
+msgstr ""
+
+msgid "Service action failed."
+msgstr ""
+
+msgid "Stage recommended aes256gcm/prfsha256/modp2048 values without enabling the legacy proposal."
+msgstr ""
+
+msgid "Start"
+msgstr ""
+
+msgid "Start action"
+msgstr ""
+
+msgid "State"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Stop"
+msgstr ""
+
+msgid "Stopped"
+msgstr ""
+
+msgid "Subject"
+msgstr ""
+
+msgid "Synchronization only adds missing recommended sections or missing options. Conflicting existing values are reported for manual review."
+msgstr ""
+
+msgid "The child tunnel references one or more ESP proposals."
+msgstr ""
+
+msgid "The table summarizes the intended default profile. The editable UCI values are above."
+msgstr ""
+
+msgid "Trap"
+msgstr ""
+
+msgid "Tune IKE and ESP proposals for modern clients while keeping an optional legacy profile available."
+msgstr ""
+
+msgid "Tunnel link"
+msgstr ""
+
+msgid "UCI section: crypto_proposal esp_proposal. AEAD algorithms such as aes256gcm do not need a hash algorithm."
+msgstr ""
+
+msgid "UCI section: crypto_proposal ike_proposal."
+msgstr ""
+
+msgid "UCI section: network interface vpn. This section is created only when explicitly saved from this page."
+msgstr ""
+
+msgid "UCI section: network interface vpn_vip."
+msgstr ""
+
+msgid "UCI section: pools primaryipv4."
+msgstr ""
+
+msgid "UCI section: remote rw_pubkey. This profile uses certificate public-key authentication."
+msgstr ""
+
+msgid "UCI section: tunnel rw_child. Local subnets define what routes clients receive."
+msgstr ""
+
+msgid "VPN"
+msgstr ""
+
+msgid "VPN Gateway Address"
+msgstr ""
+
+msgid "VPN firewall zone"
+msgstr ""
+
+msgid "VPN egress masquerade"
+msgstr ""
+
+msgid "VPN egress masquerade source"
+msgstr ""
+
+msgid "VPN gateway"
+msgstr ""
+
+msgid "Validate"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "Verbose"
+msgstr ""
+
+msgid "WAN interface"
+msgstr ""
+
+msgid "XFRM Interface"
+msgstr ""
+
+msgid "XFRM if_id"
+msgstr ""
+
+msgid "certs pending"
+msgstr ""
+
+msgid "certs ready"
+msgstr ""
+
+msgid "charon running"
+msgstr ""
+
+msgid "conflict"
+msgstr ""
+
+msgid "disabled"
+msgstr ""
+
+msgid "enabled"
+msgstr ""
+
+msgid "added"
+msgstr ""
+
+msgid "Kernel XFRM/IPsec"
+msgstr ""
+
+msgid "kernel pending"
+msgstr ""
+
+msgid "if_id"
+msgstr ""
+
+msgid "missing"
+msgstr ""
+
+msgid "modern"
+msgstr ""
+
+msgid "no"
+msgstr ""
+
+msgid "ok"
+msgstr ""
+
+msgid "pending"
+msgstr ""
+
+msgid "present"
+msgstr ""
+
+msgid "ready"
+msgstr ""
+
+msgid "review"
+msgstr ""
+
+msgid "serverCert.pem and serverKey.pem"
+msgstr ""
+
+msgid "swanctl installed"
+msgstr ""
+
+msgid "swanctl service"
+msgstr ""
+
+msgid "swanctl service running"
+msgstr ""
+
+msgid "yes"
+msgstr ""
+
+msgid "Users"
+msgstr ""
+
+msgid "Road-Warrior EAP Remote"
+msgstr ""
+
+msgid "Create EAP remote"
+msgstr ""
+
+msgid "UCI section: remote rw_eap. This profile uses EAP-MSCHAPv2 username/password authentication with the server certificate."
+msgstr ""
+
+msgid "EAP identity"
+msgstr ""
+
+msgid "Matches EAP usernames; %any accepts all configured EAP users."
+msgstr ""
+
+msgid "EAP users"
+msgstr ""
+
+msgid "EAP Users"
+msgstr ""
+
+msgid "EAP User"
+msgstr ""
+
+msgid "Manage EAP-MSCHAPv2 username/password identities. Passwords are stored in UCI secrets and never returned to the browser."
+msgstr ""
+
+msgid "Username"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Leave empty only when updating an existing user without changing the password."
+msgstr ""
+
+msgid "Save EAP user"
+msgstr ""
+
+msgid "Configured EAP Users"
+msgstr ""
+
+msgid "EAP-MSCHAPv2 identities stored as mschapv2_secrets."
+msgstr ""
+
+msgid "Stored secret"
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+msgid "No EAP users found."
+msgstr ""
+
+msgid "stored"
+msgstr ""
+
+msgid "not set"
+msgstr ""
+
+msgid "Enable"
+msgstr ""
+
+msgid "Disable"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Delete EAP user %s?"
+msgstr ""
+
+msgid "EAP user deleted."
+msgstr ""
+
+msgid "EAP user action failed."
+msgstr ""
+
+msgid "VPN network interface"
+msgstr ""
+
+msgid "VPN protocol"
+msgstr ""
+
+msgid "VPN if_id"
+msgstr ""
+
+msgid "VPN tunnel link"
+msgstr ""
+
+msgid "VPN MTU"
+msgstr ""
+
+msgid "VPN gateway address interface"
+msgstr ""
+
+msgid "VPN gateway protocol"
+msgstr ""
+
+msgid "VPN gateway address"
+msgstr ""
+
+msgid "VPN gateway device"
+msgstr ""
+
+msgid "LAN to VPN forwarding"
+msgstr ""
+
+msgid "VPN to LAN forwarding"
+msgstr ""
+
+msgid "VPN to WAN forwarding"
+msgstr ""
+
+msgid "Allow IKEv2 ISAKMP"
+msgstr ""
+
+msgid "Allow IKEv2 ISAKMP source zone"
+msgstr ""
+
+msgid "Allow IKEv2 ISAKMP protocol"
+msgstr ""
+
+msgid "Allow IKEv2 ISAKMP port"
+msgstr ""
+
+msgid "Allow IKEv2 ISAKMP action"
+msgstr ""
+
+msgid "Allow IKEv2 NAT-T"
+msgstr ""
+
+msgid "Allow IKEv2 NAT-T source zone"
+msgstr ""
+
+msgid "Allow IKEv2 NAT-T protocol"
+msgstr ""
+
+msgid "Allow IKEv2 NAT-T port"
+msgstr ""
+
+msgid "Allow IKEv2 NAT-T action"
+msgstr ""
+
+msgid "Allow IKEv2 ESP"
+msgstr ""
+
+msgid "Allow IKEv2 ESP source zone"
+msgstr ""
+
+msgid "Allow IKEv2 ESP protocol"
+msgstr ""
+
+msgid "Allow IKEv2 ESP action"
+msgstr ""
+
+msgid "Allow IKEv2 AH"
+msgstr ""
+
+msgid "Allow IKEv2 AH source zone"
+msgstr ""
+
+msgid "Allow IKEv2 AH protocol"
+msgstr ""
+
+msgid "Allow IKEv2 AH action"
+msgstr ""
+
+msgid "IPsec config file"
+msgstr ""
+
+msgid "uci command"
+msgstr ""
+
+msgid "Certificate remote profile"
+msgstr ""
+
+msgid "EAP remote profile"
+msgstr ""
+
+msgid "IKE proposal"
+msgstr ""
+
+msgid "Child tunnel"
+msgstr ""
+
+msgid "ESP proposal"
+msgstr ""
+
+msgid "Address pool"
+msgstr ""
+
+msgid "EAP user secrets"
+msgstr ""
+
+msgid "pki command"
+msgstr ""
+
+msgid "netifd XFRM protocol"
+msgstr ""
+
+msgid "Server credentials"
+msgstr ""
+
+msgid "XFRM interface ID match"
+msgstr ""
+
+msgid "Legacy IPsec service disabled"
+msgstr ""
+
+msgid "Created firewall rule %s"
+msgstr ""
+
+msgid "Created %s to %s forwarding"
+msgstr ""
+
+msgid "%s to %s forwarding is missing"
+msgstr ""
+
+msgid "%s to %s forwarding exists"
+msgstr ""
+
+msgid "Created %s"
+msgstr ""
+
+msgid "%s is missing"
+msgstr ""
+
+msgid "%s is missing or invalid"
+msgstr ""
+
+msgid "%s exists with type %s"
+msgstr ""
+
+msgid "%s exists"
+msgstr ""
+
+msgid "%s is %s, expected %s"
+msgstr ""
+
+msgid "Set %s to %s"
+msgstr ""
+
+msgid "%s contains %s"
+msgstr ""
+
+msgid "Added %s to %s"
+msgstr ""
+
+msgid "%s does not contain %s"
+msgstr ""
+
+msgid "%s is %s"
+msgstr ""
+
+msgid "pki command is available"
+msgstr ""
+
+msgid "netifd xfrm protocol is available"
+msgstr ""
+
+msgid "server credentials exist when a responder is enabled"
+msgstr ""
+
+msgid "network and CHILD XFRM interface IDs match"
+msgstr ""
+
+msgid "legacy ipsec service is absent or disabled"
+msgstr ""
+
+msgid "pki command is not available"
+msgstr ""
+
+msgid "failed to create temporary CA key"
+msgstr ""
+
+msgid "failed to create temporary CA certificate"
+msgstr ""
+
+msgid "generated CA certificate validation failed"
+msgstr ""
+
+msgid "failed to install generated CA material"
+msgstr ""
+
+msgid "failed to create temporary server key"
+msgstr ""
+
+msgid "failed to create temporary server certificate"
+msgstr ""
+
+msgid "generated server certificate validation failed"
+msgstr ""
+
+msgid "failed to install generated server material"
+msgstr ""
+
+msgid "failed to create temporary client key"
+msgstr ""
+
+msgid "failed to create temporary client certificate"
+msgstr ""
+
+msgid "generated client certificate validation failed"
+msgstr ""
+
+msgid "failed to install generated client material"
+msgstr ""
+
+msgid "failed to create temporary p12 bundle"
+msgstr ""
+
+msgid "failed to protect p12 bundle"
+msgstr ""
+
+msgid "failed to install p12 bundle"
+msgstr ""
+
+msgid "VPN uplink interface"
+msgstr ""
+
+msgid "VPN uplink firewall zone"
+msgstr ""
+
+msgid "XFRM tunnel link"
+msgstr ""
+
+msgid "configured uplink interface exists"
+msgstr ""
+
+msgid "configured uplink interface is missing or invalid"
+msgstr ""
+
+msgid "firewall zone for configured uplink exists"
+msgstr ""
+
+msgid "firewall zone for configured uplink is missing"
+msgstr ""
+
+msgid "network.vpn.tunlink matches configured uplink interface"
+msgstr ""
+
+msgid "network.vpn.tunlink does not match configured uplink interface"
+msgstr ""
+
+msgid "No configured uplink interface exists"
+msgstr ""
+
+msgid "No firewall zone contains the configured uplink network"
+msgstr ""
+
+msgid "No VPN firewall zone is configured"
+msgstr ""
+
+msgid "VPN and uplink firewall zones must be different"
+msgstr ""
+
+msgid "Firewall zone %s"
+msgstr ""
+
+msgid "Forwarding %s to %s"
+msgstr ""
+
+msgid "%s zone %s"
+msgstr ""
+
+msgid "%s zone network %s"
+msgstr ""
+
+msgid "Created firewall zone %s"
+msgstr ""
+
+msgid "Firewall zone %s is missing"
+msgstr ""
+
+msgid "Firewall zone %s exists"
+msgstr ""
+
+msgid "Firewall and Diagnostics"
+msgstr ""
+
+msgid "Preview and apply firewall rules derived from the configured uplink and VPN gateway settings."
+msgstr ""
+
+msgid "Allow VPN clients to access the selected uplink zone"
+msgstr ""
+
+msgid "Revalidate"
+msgstr ""
+
+msgid "Enable at boot"
+msgstr ""
+
+msgid "Disable at boot"
+msgstr ""
+
+msgid "Select an existing non-VPN network interface."
+msgstr ""
+
+msgid "Global strongSwan UCI settings. The service is disabled by default; enable it explicitly from the Overview page when the configuration is ready."
+msgstr ""
+
+msgid "Uplink interface"
+msgstr ""
+
+msgid "The selected interface is the VPN uplink. Saving this page also updates the XFRM tunnel link."
+msgstr ""
+
+msgid "Not configured"
+msgstr ""
+
+msgid "Derived from the XFRM interface ID when this page is saved."
+msgstr ""
+
+msgid "This value is also written to the child tunnel XFRM if_id."
+msgstr ""
+
+msgid "Derived from the selected uplink interface when this page is saved."
+msgstr ""
+
+msgid "input"
+msgstr ""
+
+msgid "output"
+msgstr ""
+
+msgid "forward"
+msgstr ""
+
+msgid "%s (not generated)"
+msgstr ""
+
+msgid "Automatically selected to match the server certificate."
+msgstr ""
+
+msgid "Select an existing IKE proposal."
+msgstr ""
+
+msgid "Select an existing child tunnel."
+msgstr ""
+
+msgid "Select an existing address pool."
+msgstr ""
+
+msgid "Select an existing ESP proposal."
+msgstr ""
+
+msgid "Derived from the XFRM interface ID on the Server page."
+msgstr ""
+
+msgid "Component and Service Status"
+msgstr ""
+
+msgid "Component"
+msgstr ""
+
+msgid "swanctl package"
+msgstr ""
+
+msgid "Installed"
+msgstr ""
+
+msgid "Available"
+msgstr ""
+
+msgid "Unavailable"
+msgstr ""
+
+msgid "charon process"
+msgstr ""
+
+msgid "Existing firewall settings conflict with the configured values"
+msgstr ""
+
+msgid "Firewall configuration commit"
+msgstr ""
+
+msgid "Firewall service reload"
+msgstr ""
+
+msgid "Failed to commit firewall configuration"
+msgstr ""
+
+msgid "Failed to reload firewall service"
+msgstr ""
+
+msgid "Firewall service reloaded"
+msgstr ""
+
+msgid "Saving this page also updates the XFRM interface firewall zone."
+msgstr ""
+
+msgid "Derived from the global VPN firewall zone when this page is saved."
+msgstr ""
+
+msgid "XFRM firewall zone"
+msgstr ""
+
+msgid "network.vpn.zone matches configured VPN firewall zone"
+msgstr ""
+
+msgid "network.vpn.zone does not match configured VPN firewall zone"
+msgstr ""
+
+msgid "Kernel unavailable"
+msgstr ""
+
+msgid "Certificates missing"
+msgstr ""
+
+msgid "Certificates ready"
+msgstr ""
+
+msgid "Certificate identities"
+msgstr ""
+
+msgid "Certificate identity (SAN/CN)"
+msgstr ""
+
+msgid "The value is embedded in the server certificate and must match the IKEv2 local identifier."
+msgstr ""
+
+msgid "Select an identity contained in the selected server certificate."
+msgstr ""
+
+msgid "Generate or select a server certificate before enabling this responder."
+msgstr ""
+
+msgid "rw_pubkey local identifier matches the selected server certificate"
+msgstr ""
+
+msgid "rw_pubkey local identifier is missing or does not match the selected server certificate"
+msgstr ""
+
+msgid "rw_eap local identifier matches the selected server certificate"
+msgstr ""
+
+msgid "rw_eap local identifier is missing or does not match the selected server certificate"
+msgstr ""

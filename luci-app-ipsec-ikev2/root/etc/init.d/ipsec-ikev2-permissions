@@ -1,0 +1,19 @@
+#!/bin/sh /etc/rc.common
+
+START=89
+STOP=10
+
+RUNTIME_DIR=/tmp/swanctl
+RUNTIME_CONF=$RUNTIME_DIR/swanctl.conf
+
+start() {
+	umask 077
+
+	mkdir -p "$RUNTIME_DIR" || return 1
+	chmod 700 "$RUNTIME_DIR" || return 1
+
+	[ ! -L "$RUNTIME_CONF" ] || return 1
+	[ -e "$RUNTIME_CONF" ] || : > "$RUNTIME_CONF"
+	[ -f "$RUNTIME_CONF" ] || return 1
+	chmod 600 "$RUNTIME_CONF"
+}

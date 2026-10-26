@@ -1,0 +1,1334 @@
+# Generated for luci-app-ipsec-ikev2.
+msgid ""
+msgstr ""
+"Project-Id-Version: luci-app-ipsec-ikev2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-08 00:00+0000\n"
+"PO-Revision-Date: 2026-07-08 00:00+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_Hans\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "/etc/swanctl/x509ca/caCert.pem and /etc/swanctl/private/caKey.pem"
+msgstr "/etc/swanctl/x509ca/caCert.pem 和 /etc/swanctl/private/caKey.pem"
+
+msgid "Address pools"
+msgstr "地址池"
+
+msgid "Advanced"
+msgstr "高级"
+
+msgid "Advanced and Firewall"
+msgstr "高级和防火墙"
+
+msgid "Allow VPN clients to access WAN"
+msgstr "允许 VPN 客户端访问 WAN"
+
+msgid "Allow clients to roam between networks without reconnecting."
+msgstr "允许客户端在不同网络间漫游而无需重新连接。"
+
+msgid "Allowed characters: letters, numbers, dot, underscore, dash."
+msgstr "允许字符：字母、数字、点、下划线、短横线。"
+
+msgid "Also create optional AH rule"
+msgstr "同时创建可选 AH 规则"
+
+msgid "Always"
+msgstr "始终"
+
+msgid "Apply firewall"
+msgstr "应用防火墙"
+
+msgid "Apply network"
+msgstr "应用网络"
+
+msgid "Authentication"
+msgstr "认证方式"
+
+msgid "Basic"
+msgstr "基础"
+
+msgid "CA Certificate"
+msgstr "CA 证书"
+
+msgid "CA certificate"
+msgstr "CA 证书"
+
+msgid "CA certificates"
+msgstr "CA 证书"
+
+msgid "CA generation finished."
+msgstr "CA 生成完成。"
+
+msgid "CHILD rekey time"
+msgstr "CHILD 重协商时间"
+
+msgid "Certificate"
+msgstr "证书"
+
+msgid "Certificates"
+msgstr "证书"
+
+msgid "Check"
+msgstr "检查项"
+
+msgid "Child Tunnel"
+msgstr "子隧道"
+
+msgid "Child Tunnel Crypto Binding"
+msgstr "子隧道加密绑定"
+
+msgid "Child tunnels"
+msgstr "子隧道"
+
+msgid "Client Address Pool"
+msgstr "客户端地址池"
+
+msgid "Client Certificate"
+msgstr "客户端证书"
+
+msgid "Client Certificates"
+msgstr "客户端证书"
+
+msgid "Client certificate generation finished."
+msgstr "客户端证书生成完成。"
+
+msgid "Client name"
+msgstr "客户端名称"
+
+msgid "Client p12 export finished."
+msgstr "客户端 p12 导出完成。"
+
+msgid "Client pool"
+msgstr "客户端地址池"
+
+msgid "Close action"
+msgstr "关闭动作"
+
+msgid "Common name"
+msgstr "通用名称"
+
+msgid "Configuration"
+msgstr "配置"
+
+msgid "Configuration Validation"
+msgstr "配置校验"
+
+msgid "Configuration checks are read-only."
+msgstr "配置检查为只读操作。"
+
+msgid "Configure the IKEv2 responder, identity, XFRM interface, and client address pool."
+msgstr "配置 IKEv2 响应端、身份标识、XFRM 接口和客户端地址池。"
+
+msgid "Create ESP proposal"
+msgstr "创建 ESP 提案"
+
+msgid "Create IKE proposal"
+msgstr "创建 IKE 提案"
+
+msgid "Create VPN gateway address"
+msgstr "创建 VPN 网关地址"
+
+msgid "Create XFRM interface"
+msgstr "创建 XFRM 接口"
+
+msgid "Create address pool"
+msgstr "创建地址池"
+
+msgid "Create and inspect CA, server, and client certificate material used by strongSwan. Private keys are never displayed in the browser."
+msgstr "创建并查看 strongSwan 使用的 CA、服务端和客户端证书材料。私钥永远不会显示在浏览器中。"
+
+msgid "Create child tunnel"
+msgstr "创建子隧道"
+
+msgid "Create legacy ESP proposal"
+msgstr "创建旧式 ESP 提案"
+
+msgid "Create road-warrior remote"
+msgstr "创建 Road-Warrior 远端"
+
+msgid "Crypto"
+msgstr "加密"
+
+msgid "Crypto Proposals"
+msgstr "加密提案"
+
+msgid "DH"
+msgstr "DH"
+
+msgid "DH group"
+msgstr "DH 组"
+
+msgid "DNS servers"
+msgstr "DNS 服务器"
+
+msgid "Debug level"
+msgstr "调试级别"
+
+msgid "Device"
+msgstr "设备"
+
+msgid "Diagnostics"
+msgstr "诊断"
+
+msgid "ESP Proposal"
+msgstr "ESP 提案"
+
+msgid "ESP proposals"
+msgstr "ESP 提案"
+
+msgid "Enable responder"
+msgstr "启用响应端"
+
+msgid "Enabled"
+msgstr "启用"
+
+msgid "Encryption"
+msgstr "加密算法"
+
+msgid "Expires"
+msgstr "过期时间"
+
+msgid "Export .p12"
+msgstr "导出 .p12"
+
+msgid "Export password"
+msgstr "导出密码"
+
+msgid "Exported .p12 bundles are written to /tmp/luci-ipsec-ikev2 with mode 0600. The password is not stored in UCI."
+msgstr "导出的 .p12 包会以 0600 权限写入 /tmp/luci-ipsec-ikev2。密码不会存入 UCI。"
+
+msgid "Fingerprint"
+msgstr "指纹"
+
+msgid "Firewall Sync"
+msgstr "防火墙同步"
+
+msgid "Firewall preview failed."
+msgstr "防火墙预览失败。"
+
+msgid "Firewall preview loaded."
+msgstr "防火墙预览已加载。"
+
+msgid "Firewall rules synchronized."
+msgstr "防火墙规则已同步。"
+
+msgid "Firewall sync failed."
+msgstr "防火墙同步失败。"
+
+msgid "Firewall zone"
+msgstr "防火墙区域"
+
+msgid "Gateway"
+msgstr "网关"
+
+msgid "Generate CA"
+msgstr "生成 CA"
+
+msgid "Generate client cert/key and export a password-protected .p12 bundle."
+msgstr "生成客户端证书/私钥并导出受密码保护的 .p12 包。"
+
+msgid "Generate client certificate"
+msgstr "生成客户端证书"
+
+msgid "Generate server certificate"
+msgstr "生成服务端证书"
+
+msgid "Global IPsec Settings"
+msgstr "全局 IPsec 设置"
+
+msgid "Global strongSwan UCI settings. The installation defaults keep the service disabled until the remote section is explicitly enabled."
+msgstr "全局 strongSwan UCI 设置。安装默认保持服务关闭，直到明确启用远端配置。"
+
+msgid "Hash"
+msgstr "哈希算法"
+
+msgid "IKE / CHILD"
+msgstr "IKE / CHILD"
+
+msgid "IKE / CHILD SA"
+msgstr "IKE / CHILD SA"
+
+msgid "IKE Proposal"
+msgstr "IKE 提案"
+
+msgid "IKE fragmentation"
+msgstr "IKE 分片"
+
+msgid "IKE proposals"
+msgstr "IKE 提案"
+
+msgid "IKE rekey time"
+msgstr "IKE 重协商时间"
+
+msgid "IPsec IKEv2"
+msgstr "IPsec IKEv2"
+
+msgid "IPsec IKEv2 Road-Warrior"
+msgstr "IPsec IKEv2 Road-Warrior"
+
+msgid "Identifier"
+msgstr "标识符"
+
+msgid "If requested"
+msgstr "按需"
+
+msgid "Integrity / PRF"
+msgstr "完整性 / PRF"
+
+msgid "Item"
+msgstr "项目"
+
+msgid "Keying tries"
+msgstr "密钥协商尝试次数"
+
+msgid "Known client identities from /etc/swanctl/x509 and /etc/swanctl/private."
+msgstr "来自 /etc/swanctl/x509 和 /etc/swanctl/private 的已知客户端身份。"
+
+msgid "Last exported p12"
+msgstr "上次导出的 p12"
+
+msgid "Legacy ESP Proposal"
+msgstr "旧式 ESP 提案"
+
+msgid "Lifetime days"
+msgstr "有效期天数"
+
+msgid "Local identifier"
+msgstr "本地标识符"
+
+msgid "Local subnets"
+msgstr "本地子网"
+
+msgid "MOBIKE"
+msgstr "MOBIKE"
+
+msgid "MTU"
+msgstr "MTU"
+
+msgid "Message"
+msgstr "消息"
+
+msgid "Missing"
+msgstr "缺失"
+
+msgid "Modern IPsec defaults have been staged. Use Save & Apply to commit and apply the changes."
+msgstr "现代 IPsec 默认值已暂存。请使用“保存并应用”提交并应用更改。"
+
+msgid "Modern defaults"
+msgstr "现代默认值"
+
+msgid "Monitor strongSwan swanctl, active tunnels, package readiness, and recent IPsec log output."
+msgstr "监控 strongSwan swanctl、活动隧道、依赖包状态和最近的 IPsec 日志输出。"
+
+msgid "Must match the IKEv2 local identifier."
+msgstr "必须匹配 IKEv2 本地标识符。"
+
+msgid "Must match the server certificate SAN or CN."
+msgstr "必须匹配服务端证书的 SAN 或 CN。"
+
+msgid "Name"
+msgstr "名称"
+
+msgid "Network Sync"
+msgstr "网络同步"
+
+msgid "Network preview failed."
+msgstr "网络预览失败。"
+
+msgid "Network preview loaded."
+msgstr "网络预览已加载。"
+
+msgid "Network sections synchronized."
+msgstr "网络配置段已同步。"
+
+msgid "Network sync failed."
+msgstr "网络同步失败。"
+
+msgid "Never"
+msgstr "从不"
+
+msgid "No client certificates found."
+msgstr "未找到客户端证书。"
+
+msgid "No data loaded yet."
+msgstr "尚未加载数据。"
+
+msgid "No matching log entries."
+msgstr "没有匹配的日志条目。"
+
+msgid "No validation data loaded yet."
+msgstr "尚未加载校验数据。"
+
+msgid "None"
+msgstr "无"
+
+msgid "None / AEAD"
+msgstr "无 / AEAD"
+
+msgid "Optional compatibility profile. It is not referenced by the child tunnel unless explicitly added above."
+msgstr "可选兼容配置。除非在上方显式添加，否则子隧道不会引用它。"
+
+msgid "Options"
+msgstr "选项"
+
+msgid "Overview"
+msgstr "概览"
+
+msgid "PRF"
+msgstr "PRF"
+
+msgid "Present"
+msgstr "已存在"
+
+msgid "Preview firewall"
+msgstr "预览防火墙"
+
+msgid "Preview network"
+msgstr "预览网络"
+
+msgid "Private key"
+msgstr "私钥"
+
+msgid "Proposal Preview"
+msgstr "提案预览"
+
+msgid "Protocol"
+msgstr "协议"
+
+msgid "Public key"
+msgstr "公钥"
+
+msgid "Quiet"
+msgstr "静默"
+
+msgid "Ready"
+msgstr "就绪"
+
+msgid "Recent Log"
+msgstr "最近日志"
+
+msgid "Recommended XFRM interface and VPN gateway address."
+msgstr "推荐的 XFRM 接口和 VPN 网关地址。"
+
+msgid "Refresh"
+msgstr "刷新"
+
+msgid "Reload"
+msgstr "重载"
+
+msgid "Required packages"
+msgstr "必需软件包"
+
+msgid "Restart"
+msgstr "重启"
+
+msgid "Review and synchronize recommended network and firewall sections. Existing custom sections are not overwritten."
+msgstr "检查并同步推荐的网络和防火墙配置段。已有自定义配置不会被覆盖。"
+
+msgid "Road-Warrior Remote"
+msgstr "Road-Warrior 远端"
+
+msgid "Rules are matched by zone and rule name, never blindly overwritten."
+msgstr "规则按区域和规则名匹配，绝不会盲目覆盖。"
+
+msgid "Running"
+msgstr "运行中"
+
+msgid "Runtime Checks"
+msgstr "运行时检查"
+
+msgid "Section"
+msgstr "配置段"
+
+msgid "Send certificate"
+msgstr "发送证书"
+
+msgid "Send certificate request"
+msgstr "发送证书请求"
+
+msgid "Server"
+msgstr "服务端"
+
+msgid "Server Certificate"
+msgstr "服务端证书"
+
+msgid "Server Settings"
+msgstr "服务端设置"
+
+msgid "Server certificate"
+msgstr "服务端证书"
+
+msgid "Server certificate generation finished."
+msgstr "服务端证书生成完成。"
+
+msgid "Server private key"
+msgstr "服务端私钥"
+
+msgid "Service action completed: %s"
+msgstr "服务动作已完成：%s"
+
+msgid "Service action failed."
+msgstr "服务动作失败。"
+
+msgid "Stage recommended aes256gcm/prfsha256/modp2048 values without enabling the legacy proposal."
+msgstr "暂存推荐的 aes256gcm/prfsha256/modp2048 值，不启用旧式提案。"
+
+msgid "Start"
+msgstr "启动"
+
+msgid "Start action"
+msgstr "启动动作"
+
+msgid "State"
+msgstr "状态"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Stop"
+msgstr "停止"
+
+msgid "Stopped"
+msgstr "已停止"
+
+msgid "Subject"
+msgstr "主题"
+
+msgid "Synchronization only adds missing recommended sections or missing options. Conflicting existing values are reported for manual review."
+msgstr "同步只会添加缺失的推荐配置段或选项。冲突的已有值会报告出来供手动复核。"
+
+msgid "The child tunnel references one or more ESP proposals."
+msgstr "子隧道引用一个或多个 ESP 提案。"
+
+msgid "The table summarizes the intended default profile. The editable UCI values are above."
+msgstr "此表汇总了预期的默认配置。可编辑的 UCI 值位于上方。"
+
+msgid "Trap"
+msgstr "Trap"
+
+msgid "Tune IKE and ESP proposals for modern clients while keeping an optional legacy profile available."
+msgstr "为现代客户端调整 IKE 和 ESP 提案，同时保留可选的旧式兼容配置。"
+
+msgid "Tunnel link"
+msgstr "隧道链路"
+
+msgid "UCI section: crypto_proposal esp_proposal. AEAD algorithms such as aes256gcm do not need a hash algorithm."
+msgstr "UCI 配置段：crypto_proposal esp_proposal。aes256gcm 等 AEAD 算法不需要哈希算法。"
+
+msgid "UCI section: crypto_proposal ike_proposal."
+msgstr "UCI 配置段：crypto_proposal ike_proposal。"
+
+msgid "UCI section: network interface vpn. This section is created only when explicitly saved from this page."
+msgstr "UCI 配置段：network interface vpn。只有从本页面显式保存时才会创建。"
+
+msgid "UCI section: network interface vpn_vip."
+msgstr "UCI 配置段：network interface vpn_vip。"
+
+msgid "UCI section: pools primaryipv4."
+msgstr "UCI 配置段：pools primaryipv4。"
+
+msgid "UCI section: remote rw_pubkey. This profile uses certificate public-key authentication."
+msgstr "UCI 配置段：remote rw_pubkey。此配置使用证书公钥认证。"
+
+msgid "UCI section: tunnel rw_child. Local subnets define what routes clients receive."
+msgstr "UCI 配置段：tunnel rw_child。本地子网定义客户端接收的路由。"
+
+msgid "VPN"
+msgstr "VPN"
+
+msgid "VPN Gateway Address"
+msgstr "VPN 网关地址"
+
+msgid "VPN firewall zone"
+msgstr "VPN 防火墙区域"
+
+msgid "VPN egress masquerade"
+msgstr "VPN 出站地址伪装"
+
+msgid "VPN egress masquerade source"
+msgstr "VPN 出站地址伪装源网段"
+
+msgid "VPN gateway"
+msgstr "VPN 网关"
+
+msgid "Validate"
+msgstr "校验"
+
+msgid "Value"
+msgstr "值"
+
+msgid "Verbose"
+msgstr "详细"
+
+msgid "WAN interface"
+msgstr "WAN 接口"
+
+msgid "XFRM Interface"
+msgstr "XFRM 接口"
+
+msgid "XFRM if_id"
+msgstr "XFRM if_id"
+
+msgid "certs pending"
+msgstr "证书待处理"
+
+msgid "certs ready"
+msgstr "证书就绪"
+
+msgid "charon running"
+msgstr "charon 运行中"
+
+msgid "conflict"
+msgstr "冲突"
+
+msgid "disabled"
+msgstr "已禁用"
+
+msgid "enabled"
+msgstr "已启用"
+
+msgid "added"
+msgstr "已添加"
+
+msgid "Kernel XFRM/IPsec"
+msgstr "内核 XFRM/IPsec"
+
+msgid "kernel pending"
+msgstr "内核待就绪"
+
+msgid "if_id"
+msgstr "if_id"
+
+msgid "missing"
+msgstr "缺失"
+
+msgid "modern"
+msgstr "现代"
+
+msgid "no"
+msgstr "否"
+
+msgid "ok"
+msgstr "正常"
+
+msgid "pending"
+msgstr "待处理"
+
+msgid "present"
+msgstr "存在"
+
+msgid "ready"
+msgstr "就绪"
+
+msgid "review"
+msgstr "待复核"
+
+msgid "serverCert.pem and serverKey.pem"
+msgstr "serverCert.pem 和 serverKey.pem"
+
+msgid "swanctl installed"
+msgstr "swanctl 已安装"
+
+msgid "swanctl service"
+msgstr "swanctl 服务"
+
+msgid "swanctl service running"
+msgstr "swanctl 服务运行中"
+
+msgid "yes"
+msgstr "是"
+
+msgid "Users"
+msgstr "用户"
+
+msgid "Road-Warrior EAP Remote"
+msgstr "Road-Warrior EAP 远端"
+
+msgid "Create EAP remote"
+msgstr "创建 EAP 远端"
+
+msgid "UCI section: remote rw_eap. This profile uses EAP-MSCHAPv2 username/password authentication with the server certificate."
+msgstr "UCI 配置段：remote rw_eap。此配置使用 EAP-MSCHAPv2 用户名/密码认证，并使用服务端证书。"
+
+msgid "EAP identity"
+msgstr "EAP 身份"
+
+msgid "Matches EAP usernames; %any accepts all configured EAP users."
+msgstr "匹配 EAP 用户名；%any 接受所有已配置的 EAP 用户。"
+
+msgid "EAP users"
+msgstr "EAP 用户"
+
+msgid "EAP Users"
+msgstr "EAP 用户"
+
+msgid "EAP User"
+msgstr "EAP 用户"
+
+msgid "Manage EAP-MSCHAPv2 username/password identities. Passwords are stored in UCI secrets and never returned to the browser."
+msgstr "管理 EAP-MSCHAPv2 用户名/密码身份。密码存入 UCI secrets，且不会返回浏览器。"
+
+msgid "Username"
+msgstr "用户名"
+
+msgid "Password"
+msgstr "密码"
+
+msgid "Leave empty only when updating an existing user without changing the password."
+msgstr "仅在更新现有用户且不修改密码时留空。"
+
+msgid "Save EAP user"
+msgstr "保存 EAP 用户"
+
+msgid "Configured EAP Users"
+msgstr "已配置的 EAP 用户"
+
+msgid "EAP-MSCHAPv2 identities stored as mschapv2_secrets."
+msgstr "以 mschapv2_secrets 存储的 EAP-MSCHAPv2 身份。"
+
+msgid "Stored secret"
+msgstr "已存储密码"
+
+msgid "Actions"
+msgstr "操作"
+
+msgid "No EAP users found."
+msgstr "未找到 EAP 用户。"
+
+msgid "stored"
+msgstr "已存储"
+
+msgid "not set"
+msgstr "未设置"
+
+msgid "Enable"
+msgstr "启用"
+
+msgid "Disable"
+msgstr "禁用"
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "Delete EAP user %s?"
+msgstr "删除 EAP 用户 %s？"
+
+msgid "EAP user deleted."
+msgstr "EAP 用户已删除。"
+
+msgid "EAP user action failed."
+msgstr "EAP 用户操作失败。"
+
+msgid "kernel XFRM/IPsec netlink is available"
+msgstr "内核 XFRM/IPsec netlink 可用"
+
+msgid "kernel XFRM/IPsec netlink is unavailable; load or install matching kmod-ipsec/xfrm_user modules"
+msgstr "内核 XFRM/IPsec netlink 不可用；请加载或安装匹配的 kmod-ipsec/xfrm_user 模块"
+
+msgid "/etc/config/ipsec exists"
+msgstr "/etc/config/ipsec 已存在"
+
+msgid "uci command is available"
+msgstr "uci 命令可用"
+
+msgid "remote rw_pubkey section exists"
+msgstr "remote rw_pubkey 配置段已存在"
+
+msgid "remote rw_eap section exists"
+msgstr "remote rw_eap 配置段已存在"
+
+msgid "IKE proposal section exists"
+msgstr "IKE 提案配置段已存在"
+
+msgid "child tunnel section exists"
+msgstr "子隧道配置段已存在"
+
+msgid "ESP proposal section exists"
+msgstr "ESP 提案配置段已存在"
+
+msgid "address pool section exists"
+msgstr "地址池配置段已存在"
+
+msgid "EAP user secret exists when rw_eap is enabled"
+msgstr "启用 rw_eap 时已配置 EAP 用户密码"
+
+msgid "responders are not enabled unless explicitly set"
+msgstr "未显式设置时响应端保持禁用"
+
+msgid "invalid action"
+msgstr "无效操作"
+
+msgid "swanctl init script not found"
+msgstr "未找到 swanctl 初始化脚本"
+
+msgid "invalid EAP username"
+msgstr "EAP 用户名无效"
+
+msgid "invalid EAP password"
+msgstr "EAP 密码无效"
+
+msgid "password is required for a new EAP user"
+msgstr "新增 EAP 用户必须填写密码"
+
+msgid "failed to create EAP user"
+msgstr "创建 EAP 用户失败"
+
+msgid "failed to set EAP username"
+msgstr "设置 EAP 用户名失败"
+
+msgid "failed to set EAP password"
+msgstr "设置 EAP 密码失败"
+
+msgid "failed to update EAP user state"
+msgstr "更新 EAP 用户状态失败"
+
+msgid "failed to commit EAP user"
+msgstr "提交 EAP 用户失败"
+
+msgid "EAP user saved"
+msgstr "EAP 用户已保存"
+
+msgid "EAP user not found"
+msgstr "未找到 EAP 用户"
+
+msgid "failed to delete EAP user"
+msgstr "删除 EAP 用户失败"
+
+msgid "failed to commit EAP user deletion"
+msgstr "提交 EAP 用户删除失败"
+
+msgid "pki command is not available"
+msgstr "pki 命令不可用"
+
+msgid "openssl command is not available"
+msgstr "openssl 命令不可用"
+
+msgid "failed to create certificate directories"
+msgstr "创建证书目录失败"
+
+msgid "invalid CA common name"
+msgstr "CA 通用名称无效"
+
+msgid "failed to generate CA private key"
+msgstr "生成 CA 私钥失败"
+
+msgid "failed to generate CA certificate"
+msgstr "生成 CA 证书失败"
+
+msgid "CA certificate generated"
+msgstr "CA 证书已生成"
+
+msgid "invalid server identifier"
+msgstr "服务端标识符无效"
+
+msgid "CA certificate is missing"
+msgstr "缺少 CA 证书"
+
+msgid "CA private key is missing"
+msgstr "缺少 CA 私钥"
+
+msgid "failed to generate server private key"
+msgstr "生成服务端私钥失败"
+
+msgid "failed to generate server certificate"
+msgstr "生成服务端证书失败"
+
+msgid "Server certificate generated"
+msgstr "服务端证书已生成"
+
+msgid "invalid client name"
+msgstr "客户端名称无效"
+
+msgid "failed to generate client private key"
+msgstr "生成客户端私钥失败"
+
+msgid "failed to generate client certificate"
+msgstr "生成客户端证书失败"
+
+msgid "Client certificate generated"
+msgstr "客户端证书已生成"
+
+msgid "failed to create export directory"
+msgstr "创建导出目录失败"
+
+msgid "invalid export password"
+msgstr "导出密码无效"
+
+msgid "client private key is missing"
+msgstr "缺少客户端私钥"
+
+msgid "client certificate is missing"
+msgstr "缺少客户端证书"
+
+msgid "failed to export p12 bundle"
+msgstr "导出 p12 包失败"
+
+msgid "unknown method"
+msgstr "未知方法"
+
+msgid "unsupported rpcd operation"
+msgstr "不支持的 rpcd 操作"
+
+msgid "VPN network interface"
+msgstr "VPN 网络接口"
+
+msgid "VPN protocol"
+msgstr "VPN 协议"
+
+msgid "VPN if_id"
+msgstr "VPN if_id"
+
+msgid "VPN tunnel link"
+msgstr "VPN 隧道链路"
+
+msgid "VPN MTU"
+msgstr "VPN MTU"
+
+msgid "VPN gateway address interface"
+msgstr "VPN 网关地址接口"
+
+msgid "VPN gateway protocol"
+msgstr "VPN 网关协议"
+
+msgid "VPN gateway address"
+msgstr "VPN 网关地址"
+
+msgid "VPN gateway device"
+msgstr "VPN 网关设备"
+
+msgid "LAN to VPN forwarding"
+msgstr "LAN 到 VPN 转发"
+
+msgid "VPN to LAN forwarding"
+msgstr "VPN 到 LAN 转发"
+
+msgid "VPN to WAN forwarding"
+msgstr "VPN 到 WAN 转发"
+
+msgid "Allow IKEv2 ISAKMP"
+msgstr "允许 IKEv2 ISAKMP"
+
+msgid "Allow IKEv2 ISAKMP source zone"
+msgstr "允许 IKEv2 ISAKMP 来源区域"
+
+msgid "Allow IKEv2 ISAKMP protocol"
+msgstr "允许 IKEv2 ISAKMP 协议"
+
+msgid "Allow IKEv2 ISAKMP port"
+msgstr "允许 IKEv2 ISAKMP 端口"
+
+msgid "Allow IKEv2 ISAKMP action"
+msgstr "允许 IKEv2 ISAKMP 动作"
+
+msgid "Allow IKEv2 NAT-T"
+msgstr "允许 IKEv2 NAT-T"
+
+msgid "Allow IKEv2 NAT-T source zone"
+msgstr "允许 IKEv2 NAT-T 来源区域"
+
+msgid "Allow IKEv2 NAT-T protocol"
+msgstr "允许 IKEv2 NAT-T 协议"
+
+msgid "Allow IKEv2 NAT-T port"
+msgstr "允许 IKEv2 NAT-T 端口"
+
+msgid "Allow IKEv2 NAT-T action"
+msgstr "允许 IKEv2 NAT-T 动作"
+
+msgid "Allow IKEv2 ESP"
+msgstr "允许 IKEv2 ESP"
+
+msgid "Allow IKEv2 ESP source zone"
+msgstr "允许 IKEv2 ESP 来源区域"
+
+msgid "Allow IKEv2 ESP protocol"
+msgstr "允许 IKEv2 ESP 协议"
+
+msgid "Allow IKEv2 ESP action"
+msgstr "允许 IKEv2 ESP 动作"
+
+msgid "Allow IKEv2 AH"
+msgstr "允许 IKEv2 AH"
+
+msgid "Allow IKEv2 AH source zone"
+msgstr "允许 IKEv2 AH 来源区域"
+
+msgid "Allow IKEv2 AH protocol"
+msgstr "允许 IKEv2 AH 协议"
+
+msgid "Allow IKEv2 AH action"
+msgstr "允许 IKEv2 AH 动作"
+
+msgid "IPsec config file"
+msgstr "IPsec 配置文件"
+
+msgid "uci command"
+msgstr "uci 命令"
+
+msgid "Certificate remote profile"
+msgstr "证书远端配置"
+
+msgid "EAP remote profile"
+msgstr "EAP 远端配置"
+
+msgid "IKE proposal"
+msgstr "IKE 提案"
+
+msgid "Child tunnel"
+msgstr "子隧道"
+
+msgid "ESP proposal"
+msgstr "ESP 提案"
+
+msgid "Address pool"
+msgstr "地址池"
+
+msgid "EAP user secrets"
+msgstr "EAP 用户密码"
+
+msgid "pki command"
+msgstr "pki 命令"
+
+msgid "netifd XFRM protocol"
+msgstr "netifd XFRM 协议"
+
+msgid "Server credentials"
+msgstr "服务端凭据"
+
+msgid "XFRM interface ID match"
+msgstr "XFRM 接口 ID 匹配"
+
+msgid "Legacy IPsec service disabled"
+msgstr "旧版 IPsec 服务已禁用"
+
+msgid "Created firewall rule %s"
+msgstr "已创建防火墙规则 %s"
+
+msgid "Created %s to %s forwarding"
+msgstr "已创建 %s 到 %s 转发"
+
+msgid "%s to %s forwarding is missing"
+msgstr "%s 到 %s 转发缺失"
+
+msgid "%s to %s forwarding exists"
+msgstr "%s 到 %s 转发已存在"
+
+msgid "Created %s"
+msgstr "已创建 %s"
+
+msgid "%s is missing"
+msgstr "%s 缺失"
+
+msgid "%s is missing or invalid"
+msgstr "%s 缺失或无效"
+
+msgid "%s exists with type %s"
+msgstr "%s 已存在，类型为 %s"
+
+msgid "%s exists"
+msgstr "%s 已存在"
+
+msgid "%s is %s, expected %s"
+msgstr "%s 当前为 %s，期望为 %s"
+
+msgid "Set %s to %s"
+msgstr "已将 %s 设置为 %s"
+
+msgid "%s contains %s"
+msgstr "%s 包含 %s"
+
+msgid "Added %s to %s"
+msgstr "已向 %s 添加 %s"
+
+msgid "%s does not contain %s"
+msgstr "%s 不包含 %s"
+
+msgid "%s is %s"
+msgstr "%s 为 %s"
+
+msgid "pki command is available"
+msgstr "pki 命令可用"
+
+msgid "netifd xfrm protocol is available"
+msgstr "netifd XFRM 协议可用"
+
+msgid "server credentials exist when a responder is enabled"
+msgstr "启用响应端时服务端凭据已存在"
+
+msgid "network and CHILD XFRM interface IDs match"
+msgstr "网络与 CHILD 的 XFRM 接口 ID 一致"
+
+msgid "legacy ipsec service is absent or disabled"
+msgstr "旧版 ipsec 服务不存在或已禁用"
+
+msgid "failed to create temporary CA key"
+msgstr "创建临时 CA 私钥失败"
+
+msgid "failed to create temporary CA certificate"
+msgstr "创建临时 CA 证书失败"
+
+msgid "generated CA certificate validation failed"
+msgstr "生成的 CA 证书验证失败"
+
+msgid "failed to install generated CA material"
+msgstr "安装生成的 CA 材料失败"
+
+msgid "failed to create temporary server key"
+msgstr "创建临时服务端私钥失败"
+
+msgid "failed to create temporary server certificate"
+msgstr "创建临时服务端证书失败"
+
+msgid "generated server certificate validation failed"
+msgstr "生成的服务端证书验证失败"
+
+msgid "failed to install generated server material"
+msgstr "安装生成的服务端证书材料失败"
+
+msgid "failed to create temporary client key"
+msgstr "创建临时客户端私钥失败"
+
+msgid "failed to create temporary client certificate"
+msgstr "创建临时客户端证书失败"
+
+msgid "generated client certificate validation failed"
+msgstr "生成的客户端证书验证失败"
+
+msgid "failed to install generated client material"
+msgstr "安装生成的客户端证书材料失败"
+
+msgid "failed to create temporary p12 bundle"
+msgstr "创建临时 p12 包失败"
+
+msgid "failed to protect p12 bundle"
+msgstr "保护 p12 包权限失败"
+
+msgid "failed to install p12 bundle"
+msgstr "安装 p12 包失败"
+
+msgid "VPN uplink interface"
+msgstr "VPN 上联接口"
+
+msgid "VPN uplink firewall zone"
+msgstr "VPN 上联防火墙区域"
+
+msgid "XFRM tunnel link"
+msgstr "XFRM 隧道链路"
+
+msgid "configured uplink interface exists"
+msgstr "已配置的上联接口存在"
+
+msgid "configured uplink interface is missing or invalid"
+msgstr "已配置的上联接口缺失或无效"
+
+msgid "firewall zone for configured uplink exists"
+msgstr "已配置上联接口所属的防火墙区域存在"
+
+msgid "firewall zone for configured uplink is missing"
+msgstr "未找到已配置上联接口所属的防火墙区域"
+
+msgid "network.vpn.tunlink matches configured uplink interface"
+msgstr "network.vpn.tunlink 与已配置的上联接口一致"
+
+msgid "network.vpn.tunlink does not match configured uplink interface"
+msgstr "network.vpn.tunlink 与已配置的上联接口不一致"
+
+msgid "No configured uplink interface exists"
+msgstr "没有已配置且实际存在的上联接口"
+
+msgid "No firewall zone contains the configured uplink network"
+msgstr "没有防火墙区域包含已配置的上联网络"
+
+msgid "No VPN firewall zone is configured"
+msgstr "尚未配置 VPN 防火墙区域"
+
+msgid "VPN and uplink firewall zones must be different"
+msgstr "VPN 防火墙区域与上联防火墙区域必须不同"
+
+msgid "Firewall zone %s"
+msgstr "防火墙区域 %s"
+
+msgid "Forwarding %s to %s"
+msgstr "%s 到 %s 的转发"
+
+msgid "%s zone %s"
+msgstr "%s 区域%s"
+
+msgid "%s zone network %s"
+msgstr "%s 区域网络 %s"
+
+msgid "Created firewall zone %s"
+msgstr "已创建防火墙区域 %s"
+
+msgid "Firewall zone %s is missing"
+msgstr "防火墙区域 %s 缺失"
+
+msgid "Firewall zone %s exists"
+msgstr "防火墙区域 %s 已存在"
+
+msgid "Firewall and Diagnostics"
+msgstr "防火墙与诊断"
+
+msgid "Preview and apply firewall rules derived from the configured uplink and VPN gateway settings."
+msgstr "预览并应用根据已配置上联接口和 VPN 网关设置生成的防火墙规则。"
+
+msgid "Allow VPN clients to access the selected uplink zone"
+msgstr "允许 VPN 客户端访问所选上联防火墙区域"
+
+msgid "Revalidate"
+msgstr "重新校验"
+
+msgid "Enable at boot"
+msgstr "启用开机自启"
+
+msgid "Disable at boot"
+msgstr "禁用开机自启"
+
+msgid "Select an existing non-VPN network interface."
+msgstr "请选择一个实际存在的非 VPN 网络接口。"
+
+msgid "Global strongSwan UCI settings. The service is disabled by default; enable it explicitly from the Overview page when the configuration is ready."
+msgstr "全局 strongSwan UCI 设置。服务默认禁用；配置就绪后，请在概览页面明确启用。"
+
+msgid "Uplink interface"
+msgstr "上联接口"
+
+msgid "The selected interface is the VPN uplink. Saving this page also updates the XFRM tunnel link."
+msgstr "所选接口作为 VPN 上联；保存本页面时也会同步更新 XFRM 隧道链路。"
+
+msgid "Not configured"
+msgstr "未配置"
+
+msgid "Derived from the XFRM interface ID when this page is saved."
+msgstr "保存本页面时，此值由 XFRM 接口 ID 自动同步。"
+
+msgid "This value is also written to the child tunnel XFRM if_id."
+msgstr "此值也会同步写入子隧道的 XFRM if_id。"
+
+msgid "Derived from the selected uplink interface when this page is saved."
+msgstr "保存本页面时，此值由所选上联接口自动同步。"
+
+msgid "input"
+msgstr "入站策略"
+
+msgid "output"
+msgstr "出站策略"
+
+msgid "forward"
+msgstr "转发策略"
+
+msgid "%s (not generated)"
+msgstr "%s（尚未生成）"
+
+msgid "Automatically selected to match the server certificate."
+msgstr "根据所选服务端证书自动匹配。"
+
+msgid "Select an existing IKE proposal."
+msgstr "请选择实际存在的 IKE 提案。"
+
+msgid "Select an existing child tunnel."
+msgstr "请选择实际存在的子隧道。"
+
+msgid "Select an existing address pool."
+msgstr "请选择实际存在的地址池。"
+
+msgid "Select an existing ESP proposal."
+msgstr "请选择实际存在的 ESP 提案。"
+
+msgid "Derived from the XFRM interface ID on the Server page."
+msgstr "此值由服务端页面中的 XFRM 接口 ID 自动派生。"
+
+msgid "Component and Service Status"
+msgstr "组件与服务状态"
+
+msgid "Component"
+msgstr "组件"
+
+msgid "swanctl package"
+msgstr "swanctl 软件包"
+
+msgid "Installed"
+msgstr "已安装"
+
+msgid "Available"
+msgstr "可用"
+
+msgid "Unavailable"
+msgstr "不可用"
+
+msgid "charon process"
+msgstr "charon 进程"
+
+msgid "Existing firewall settings conflict with the configured values"
+msgstr "现有防火墙设置与当前配置值冲突"
+
+msgid "Firewall configuration commit"
+msgstr "提交防火墙配置"
+
+msgid "Firewall service reload"
+msgstr "重载防火墙服务"
+
+msgid "Failed to commit firewall configuration"
+msgstr "提交防火墙配置失败"
+
+msgid "Failed to reload firewall service"
+msgstr "重载防火墙服务失败"
+
+msgid "Firewall service reloaded"
+msgstr "防火墙服务已重载"
+
+msgid "Saving this page also updates the XFRM interface firewall zone."
+msgstr "保存本页面时也会同步更新 XFRM 接口的防火墙区域。"
+
+msgid "Derived from the global VPN firewall zone when this page is saved."
+msgstr "保存本页面时，此值由全局 VPN 防火墙区域自动同步。"
+
+msgid "XFRM firewall zone"
+msgstr "XFRM 防火墙区域"
+
+msgid "network.vpn.zone matches configured VPN firewall zone"
+msgstr "network.vpn.zone 与已配置的 VPN 防火墙区域一致"
+
+msgid "network.vpn.zone does not match configured VPN firewall zone"
+msgstr "network.vpn.zone 与已配置的 VPN 防火墙区域不一致"
+
+msgid "Kernel unavailable"
+msgstr "内核能力不可用"
+
+msgid "Certificates missing"
+msgstr "证书缺失"
+
+msgid "Certificates ready"
+msgstr "证书就绪"
+
+msgid "Certificate identities"
+msgstr "证书标识符"
+
+msgid "Certificate identity (SAN/CN)"
+msgstr "证书标识符（SAN/CN）"
+
+msgid "The value is embedded in the server certificate and must match the IKEv2 local identifier."
+msgstr "此值会写入服务器证书，并且必须与 IKEv2 本地标识符一致。"
+
+msgid "Select an identity contained in the selected server certificate."
+msgstr "请选择所选服务器证书中包含的标识符。"
+
+msgid "Generate or select a server certificate before enabling this responder."
+msgstr "启用此响应方之前，请先生成或选择服务器证书。"
+
+msgid "rw_pubkey local identifier matches the selected server certificate"
+msgstr "rw_pubkey 本地标识符与所选服务器证书一致"
+
+msgid "rw_pubkey local identifier is missing or does not match the selected server certificate"
+msgstr "rw_pubkey 本地标识符缺失，或与所选服务器证书不一致"
+
+msgid "rw_eap local identifier matches the selected server certificate"
+msgstr "rw_eap 本地标识符与所选服务器证书一致"
+
+msgid "rw_eap local identifier is missing or does not match the selected server certificate"
+msgstr "rw_eap 本地标识符缺失，或与所选服务器证书不一致"
